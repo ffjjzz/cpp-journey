@@ -1,22 +1,22 @@
-#include"bits/vector.h"
+#include"../bits/list.h"
 #include"iostream"
 #include<chrono>
+#include<list>
 
 
-using vct = vector<int>;
-//using vct = std::vector<int>;
+using lst = list<int>;
+//using lst = std::list<int>;
 
 
 int main(){
-	int N = 100'000'000;
+	int N = 50'000'000;
 	
 	while (true){
 		auto start = std::chrono::steady_clock::now();	
-		vct vec;
-		vec.reserve(N);
+		lst list;
 	
 		for (int i = 0;i < N; ++i){
-			vec.push_back(i);
+			list.push_front(i);
 		}
 
 		auto end = std::chrono::steady_clock::now();
@@ -28,3 +28,4 @@ int main(){
 
 	}
 }
+
